@@ -1,37 +1,31 @@
 package com.gaokd.online_education.domain;
 
-<<<<<<< HEAD
+
 import java.util.Date;
-=======
+
 import org.apache.ibatis.type.Alias;
 
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
->>>>>>> origin/develop
+
 
 /**
  * 章
  */
-<<<<<<< HEAD
-public class Chapter {
-=======
 
-public class Chapter implements Serializable {
->>>>>>> origin/develop
-    
+public class Chapter {
+
     private Integer id;
-    
+
     private Integer videoId;
-    
+
     private String title;
-    
+
     private Integer ordered;
-    
+
     private Date createTime;
 
-<<<<<<< HEAD
-=======
     private List<Episode> episodeList;
 
     public List<Episode> getEpisodeList() {
@@ -42,7 +36,6 @@ public class Chapter implements Serializable {
         this.episodeList = episodeList;
     }
 
->>>>>>> origin/develop
     public Integer getId() {
         return id;
     }
@@ -82,9 +75,4 @@ public class Chapter implements Serializable {
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
-<<<<<<< HEAD
-=======
-
-
->>>>>>> origin/develop
 }
