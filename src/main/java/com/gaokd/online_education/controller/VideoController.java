@@ -26,6 +26,7 @@ public class VideoController {
     @RequestMapping("list")
     public JsonData videoList(){
         List<Video> videoList = videoService.videoList();
+        int i = 1/0;
         return JsonData.buildSucess(videoList);
     }
 

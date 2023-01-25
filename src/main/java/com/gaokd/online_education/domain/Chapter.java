@@ -1,29 +1,26 @@
 package com.gaokd.online_education.domain;
 
-
 import java.util.Date;
-
 import org.apache.ibatis.type.Alias;
 
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
-
 /**
  * 章
  */
-
 public class Chapter {
 
+    
     private Integer id;
-
+    
     private Integer videoId;
-
+    
     private String title;
-
+    
     private Integer ordered;
-
+    
     private Date createTime;
 
     private List<Episode> episodeList;
@@ -75,4 +72,5 @@ public class Chapter {
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
+
 }

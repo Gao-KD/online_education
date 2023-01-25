@@ -1,5 +1,7 @@
 package com.gaokd.online_education.domain;
 
+import org.apache.ibatis.type.Alias;
+
 import java.io.Serializable;
 import java.util.Date;
 

@@ -1,11 +1,12 @@
 package com.gaokd.online_education.domain;
 
+import org.apache.ibatis.type.Alias;
+
 import java.util.Date;
 
 /**
  * 视频轮播图
  */
-
 public class VideoBannner {
 
     private Integer id;
