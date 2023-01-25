@@ -1,20 +1,52 @@
 package com.gaokd.online_education.controller;
 
+import com.gaokd.online_education.domain.Video;
+import com.gaokd.online_education.domain.VideoBannner;
 import com.gaokd.online_education.service.VideoService;
+import com.gaokd.online_education.utils.JsonData;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @RestController
-@RequestMapping("video")
+@RequestMapping("api/v1/pub/video")
 public class VideoController {
 
     @Autowired
     private VideoService videoService;
 
+    /**
+     * 视频列表
+     */
     @RequestMapping("list")
-    public Object videoList(){
-        return videoService.videoList();
+    public JsonData videoList(){
+        List<Video> videoList = videoService.videoList();
+        return JsonData.buildSucess(videoList);
     }
-    //
+
+    /**
+     * 轮播图列表
+     * @return
+     */
+    @RequestMapping("banner_list")
+    public JsonData indexBanner(){
+        List<VideoBannner> bannerList = videoService.bannerList();
+        return bannerList!=null? JsonData.buildSucess(bannerList):JsonData.buildError("轮播图列表为空");
+    }
+
+    /**
+     * 根据视频id查询
+     * @return
+     */
+    @GetMapping("find_detail_by_id")
+    public JsonData findDetailById(@RequestParam(value = "video_id") int videoId){
+        Video video = videoService.findDetailById(videoId);
+        return video!=null?JsonData.buildSucess(video):JsonData.buildSucess("查询不到该视频");
+    }
+
 }

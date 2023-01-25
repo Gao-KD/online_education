@@ -1,11 +1,16 @@
 package com.gaokd.online_education.domain;
 
+import org.apache.ibatis.type.Alias;
+
+import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 /**
  * 章
  */
-public class Chapter {
+
+public class Chapter implements Serializable {
     
     private Integer id;
     
@@ -16,6 +21,16 @@ public class Chapter {
     private Integer ordered;
     
     private Date createTime;
+
+    private List<Episode> episodeList;
+
+    public List<Episode> getEpisodeList() {
+        return episodeList;
+    }
+
+    public void setEpisodeList(List<Episode> episodeList) {
+        this.episodeList = episodeList;
+    }
 
     public Integer getId() {
         return id;
@@ -56,4 +71,6 @@ public class Chapter {
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
+
+
 }

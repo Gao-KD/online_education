@@ -1,11 +1,13 @@
 package com.gaokd.online_education.domain;
 
+import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 /**
  * 视频
  */
-public class Video {
+public class Video implements Serializable {
 
     private Integer id;
 
@@ -22,6 +24,10 @@ public class Video {
     private Integer cId;
 
     private Double point;
+
+    private List<Chapter> chapterList;
+
+
 
     public Integer getId() {
         return id;
@@ -85,5 +91,13 @@ public class Video {
 
     public void setPoint(Double point) {
         this.point = point;
+    }
+
+    public List<Chapter> getChapterList() {
+        return chapterList;
+    }
+
+    public void setChapterList(List<Chapter> chapterList) {
+        this.chapterList = chapterList;
     }
 }
