@@ -1,6 +1,4 @@
-package com.gaokd.online_education.domain;
-
-import org.apache.ibatis.type.Alias;
+package com.gaokd.online_education.model.entity;
 
 import java.util.Date;
 

@@ -1,4 +1,4 @@
-package com.gaokd.online_education.domain;
+package com.gaokd.online_education.model.entity;
 
 import java.util.Date;
 

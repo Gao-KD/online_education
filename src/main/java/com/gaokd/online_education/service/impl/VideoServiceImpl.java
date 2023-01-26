@@ -1,7 +1,7 @@
 package com.gaokd.online_education.service.impl;
 
-import com.gaokd.online_education.domain.Video;
-import com.gaokd.online_education.domain.VideoBannner;
+import com.gaokd.online_education.model.entity.Video;
+import com.gaokd.online_education.model.entity.VideoBannner;
 import com.gaokd.online_education.mapper.VideoMapper;
 import com.gaokd.online_education.service.VideoService;
 import org.springframework.beans.factory.annotation.Autowired;
