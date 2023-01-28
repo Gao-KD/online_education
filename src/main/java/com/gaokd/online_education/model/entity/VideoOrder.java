@@ -1,5 +1,8 @@
 package com.gaokd.online_education.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.Date;
 
 /**
@@ -8,21 +11,26 @@ import java.util.Date;
 public class VideoOrder {
 
     private Integer id;
-
+    @JsonProperty("out_trade_no")
     private String outTradeNo;
 
     private Integer state;
-
+    @JsonProperty("create_time")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Date createTime;
 
+    @JsonProperty("totle_fee")
     private Integer totalFee;
 
     private Integer videoId;
 
+    @JsonProperty("video_title")
     private String videoTitle;
 
+    @JsonProperty("video_img")
     private String videoImg;
 
+    @JsonProperty("user_id")
     private Integer userId;
 
     public Integer getId() {

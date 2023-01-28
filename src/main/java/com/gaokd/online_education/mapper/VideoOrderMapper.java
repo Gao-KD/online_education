@@ -4,6 +4,8 @@ import com.gaokd.online_education.model.entity.VideoOrder;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface VideoOrderMapper {
     /**
@@ -21,4 +23,6 @@ public interface VideoOrderMapper {
      * @return
      */
     int saveOrder(VideoOrder videoOrder);
+
+    List<VideoOrder> orderListByUserId(@Param("user_id") Integer userId);
 }

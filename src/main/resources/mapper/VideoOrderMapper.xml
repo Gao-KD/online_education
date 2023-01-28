@@ -7,8 +7,11 @@
     </select>
     <insert id="saveOrder" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
         INSERT INTO `video_order` ( `out_trade_no`, `state`, `create_time`, `total_fee`, `video_id`, `video_title`, `video_img`, `user_id`) VALUES
-        ( #{outTradeNo,jdbcType=VARCHAR}, #{state,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP},
+        ( #{outTradeNo,jdbcType=VARCHAR}, 1, #{createTime,jdbcType=TIMESTAMP},
          #{totalFee,jdbcType=INTEGER}, #{videoId,jdbcType=INTEGER}, #{videoTitle,jdbcType=VARCHAR}, #{videoImg,jdbcType=VARCHAR}, #{userId,jdbcType=INTEGER});
     </insert>
+    <select id="orderListByUserId" resultType="com.gaokd.online_education.model.entity.VideoOrder">
+        select * from video_order where user_id =#{user_id} order by create_time desc
+    </select>
 
 </mapper>

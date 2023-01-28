@@ -1,5 +1,8 @@
 package com.gaokd.online_education.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -16,14 +19,19 @@ public class Episode implements Serializable {
 
     private Integer ordered;
 
+    @JsonProperty("play_url")
     private String playUrl;
 
+    @JsonProperty("chapter_id")
     private Integer chapterId;
 
     private Integer free;
 
+    @JsonProperty("video_id")
     private Integer videoId;
 
+    @JsonProperty("create_time")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Date createTime;
 
     public Integer getId() {

@@ -20,4 +20,5 @@ public interface VideoService {
      * 根据视频id查询视频的章、级
      */
     Video findDetailById(int videoId);
+
 }
