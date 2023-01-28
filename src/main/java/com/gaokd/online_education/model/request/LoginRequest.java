@@ -1,4 +1,4 @@
-package com.gaokd.online_education.request;
+package com.gaokd.online_education.model.request;
 
 /**
  * 登录request

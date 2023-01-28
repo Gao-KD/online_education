@@ -1,8 +1,7 @@
 package com.gaokd.online_education.controller;
 
-import com.gaokd.online_education.intercept.LoginIntercept;
 import com.gaokd.online_education.model.entity.User;
-import com.gaokd.online_education.request.LoginRequest;
+import com.gaokd.online_education.model.request.LoginRequest;
 import com.gaokd.online_education.service.UserService;
 import com.gaokd.online_education.utils.JsonData;
 import org.springframework.beans.factory.annotation.Autowired;

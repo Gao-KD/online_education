@@ -62,4 +62,7 @@
         where v.id = #{video_id}
         order by c.ordered, e.num asc
     </select>
+    <select id="findById" resultType="com.gaokd.online_education.model.entity.Video">
+        select * from video where id=#{video_id}
+    </select>
 </mapper>
