@@ -33,6 +33,10 @@ public class VideoServiceImpl implements VideoService {
                 List<Video> videoList = videoMapper.videoList();
                 return videoList;
             });
+            if (objectCache instanceof List){
+                List<Video> videoList = (List<Video>) objectCache;
+                return videoList;
+            }
         }catch (Exception e){
             throw new RuntimeException(e);
         }

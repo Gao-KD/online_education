@@ -1,5 +1,6 @@
 package com.gaokd.online_education.config;
 
+import com.gaokd.online_education.intercept.CorsIntercept;
 import com.gaokd.online_education.intercept.LoginIntercept;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -19,8 +20,16 @@ public class InterceptorConfig implements WebMvcConfigurer {
         return new LoginIntercept();
     }
 
+    @Bean
+    CorsIntercept crosIntercept(){return new CorsIntercept();}
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
+        /**
+         *跨域请求， 拦截全部路径，需放在最上面
+         */
+        registry.addInterceptor(crosIntercept())
+                .addPathPatterns("/**");
+
         registry.addInterceptor(loginIntercept())
                 //拦截全部
                 .addPathPatterns("/api/v1/pri/*/*/**")

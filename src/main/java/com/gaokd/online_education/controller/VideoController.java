@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RestController
+@RestController                     //能够返回json格式
 @RequestMapping("api/v1/pub/video")
 public class VideoController {
 
@@ -25,7 +25,7 @@ public class VideoController {
     @RequestMapping("list")
     public JsonData videoList(){
         List<Video> videoList = videoService.videoList();
-        return JsonData.buildSucess(videoList);
+        return videoList!=null?JsonData.buildSucess(videoList):JsonData.buildError("视频列表为空");
     }
 
     /**

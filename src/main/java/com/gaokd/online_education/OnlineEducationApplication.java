@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 
-@EnableTransactionManagement
+@EnableTransactionManagement        //事务管理
 @SpringBootApplication
 @MapperScan("com.gaokd.online_education.mapper")
 public class OnlineEducationApplication {
